@@ -1,12 +1,14 @@
 # Anime Ranking
 
+## English
+
 Anime Ranking is a web application designed to manage anime rankings through a basic CRUD system.
 
 The project allows users to register anime information, rankings, genres, episodes, reviews, and related data using a relational database structure.
 
 ---
 
-# Features
+### Features
 
 - Create anime records
 - View anime rankings
@@ -21,7 +23,7 @@ The project allows users to register anime information, rankings, genres, episod
 
 ---
 
-# Architecture
+### Architecture
 
 The project follows the **MVC (Model - View - Controller)** architecture.
 
@@ -43,58 +45,35 @@ PostgreSQL Database
 
 ---
 
-# Technologies
+### Technologies
 
-## Backend
+#### Backend
 
 - Node.js
 - Express.js
 - Sequelize ORM
 - REST API
 
-## Frontend
+#### Frontend
 
 - Angular
 - TypeScript
 - HTML
 - CSS
 
-## Database
+#### Database
 
 - PostgreSQL
 
-## Documentation
+#### Documentation
 
 - Swagger / OpenAPI
 
 ---
 
-# Project Structure
+### Database Model
 
-```text
-AnimeRanking
-│
-├── backend
-│   ├── controllers
-│   ├── services
-│   ├── models
-│   ├── routes
-│   ├── config
-│   └── middleware
-│
-└── frontend
-    ├── components
-    ├── pages
-    ├── services
-    ├── models
-    └── shared
-```
-
----
-
-# Database Model
-
-## Normal Tables (9)
+#### Normal Tables (9)
 
 1. anime
 2. genre
@@ -106,13 +85,13 @@ AnimeRanking
 8. tag
 9. platform
 
-## Pivot Table (1)
+#### Pivot Table (1)
 
 10. anime_genre
 
 ---
 
-# Relationships
+### Relationships
 
 ```text
 Anime ----< Episode
@@ -129,94 +108,31 @@ Anime >----< Genre
 
 ---
 
-# CRUD Operations
+### Installation
 
-## Create
-
-Register anime.
-
-Example:
-
-```json
-{
-   "title":"Attack on Titan",
-   "episodes":89
-}
-```
-
-## Read
-
-Display anime ranking list.
-
-## Update
-
-Modify anime information.
-
-## Delete
-
-Remove anime entries.
-
----
-
-# Installation
-
-## Clone repository
-
-```bash
-git clone https://github.com/username/anime-ranking.git
-```
-
----
-
-## Backend Setup
-
-Move to backend:
+#### Backend
 
 ```bash
 cd backend
-```
-
-Install dependencies:
-
-```bash
 npm install
-```
-
-Run server:
-
-```bash
 npm run dev
 ```
 
-Backend:
+Backend URL:
 
 ```text
 http://localhost:3000
 ```
 
----
-
-## Frontend Setup
-
-Move to frontend:
+#### Frontend
 
 ```bash
 cd frontend
-```
-
-Install dependencies:
-
-```bash
 npm install
-```
-
-Run Angular:
-
-```bash
 ng serve
 ```
 
-Frontend:
+Frontend URL:
 
 ```text
 http://localhost:4200
@@ -224,9 +140,7 @@ http://localhost:4200
 
 ---
 
-# API Endpoints
-
-## Anime
+### API Endpoints
 
 ```http
 GET    /api/anime
@@ -235,35 +149,159 @@ PUT    /api/anime/:id
 DELETE /api/anime/:id
 ```
 
-## Genre
+---
 
-```http
-GET    /api/genre
-POST   /api/genre
-```
+## Español
 
-## Ranking
+Anime Ranking es una aplicación web diseñada para administrar rankings de anime mediante un sistema CRUD básico.
 
-```http
-GET    /api/ranking
-POST   /api/ranking
-```
+El proyecto permite registrar información de animes, clasificaciones, géneros, episodios, reseñas y datos relacionados utilizando una estructura de base de datos relacional.
 
-## Review
+---
 
-```http
-GET    /api/review
-POST   /api/review
+### Características
+
+- Crear registros de animes
+- Visualizar ranking de animes
+- Actualizar información
+- Eliminar registros
+- Gestión de géneros
+- Gestión de episodios
+- Sistema de reseñas
+- Registro de temporadas
+- Gestión de etiquetas
+- Registro de plataformas de streaming
+
+---
+
+### Arquitectura
+
+El proyecto sigue la arquitectura **MVC (Model - View - Controller)**.
+
+```text
+Frontend Angular
+        │
+        ▼
+Controladores
+        │
+        ▼
+Servicios
+        │
+        ▼
+Modelos
+        │
+        ▼
+Base de Datos PostgreSQL
 ```
 
 ---
 
-# Project Goal
+### Tecnologías
 
-Develop a CRUD application for anime ranking management using Node.js, Angular, PostgreSQL, and MVC architecture.
+#### Backend
+
+- Node.js
+- Express.js
+- Sequelize ORM
+- API REST
+
+#### Frontend
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+
+#### Base de Datos
+
+- PostgreSQL
+
+#### Documentación
+
+- Swagger / OpenAPI
 
 ---
 
-# Team
+### Modelo de Base de Datos
+
+#### Tablas normales (9)
+
+1. anime
+2. genre
+3. episode
+4. review
+5. ranking
+6. season
+7. status
+8. tag
+9. platform
+
+#### Tabla pivote (1)
+
+10. anime_genre
+
+---
+
+### Relaciones
+
+```text
+Anime ----< Episode
+Anime ----< Review
+Anime ----< Ranking
+Anime ----< Season
+Anime ----< Status
+Anime ----< Tag
+Anime ----< Platform
+
+Anime >----< Genre
+          anime_genre
+```
+
+---
+
+### Instalación
+
+#### Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+Servidor:
+
+```text
+http://localhost:3000
+```
+
+#### Frontend
+
+```bash
+cd frontend
+npm install
+ng serve
+```
+
+Cliente:
+
+```text
+http://localhost:4200
+```
+
+---
+
+### Endpoints API
+
+```http
+GET    /api/anime
+POST   /api/anime
+PUT    /api/anime/:id
+DELETE /api/anime/:id
+```
+
+---
+
+## Team / Equipo
 
 Anime Ranking Team
