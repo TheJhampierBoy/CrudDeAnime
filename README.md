@@ -73,37 +73,61 @@ PostgreSQL Database
 
 ### Database Model
 
-#### Normal Tables (9)
+#### Catalog Tables (1)
 
-1. anime
-2. genre
-3. episode
-4. review
-5. ranking
-6. season
-7. status
-8. tag
-9. platform
+1. genre
 
-#### Pivot Table (1)
+#### Core Tables (4)
+
+2. user
+3. anime
+4. season
+5. episode
+
+#### Rating Tables (1)
+
+6. episode_rating
+
+#### Comment Tables (3)
+
+7. anime_comment
+8. episode_comment
+9. comment_like
+
+#### Pivot Tables (1)
 
 10. anime_genre
+
+---
+
+### Key Fields
+
+| Table | Notable columns |
+|---|---|
+| `anime` | title, synopsis, status, year, cover_url, avg_score, ratings_count |
+| `season` | anime_id, number, title, year, avg_score, ratings_count |
+| `episode` | season_id, number, title, synopsis, aired_at, duration_sec, avg_score, ratings_count |
+| `episode_rating` | episode_id, user_id, score_story (30%), score_animation (25%), score_music (20%), score_characters (25%), final_score |
+| `anime_comment` | anime_id, user_id, body, likes_count |
+| `episode_comment` | episode_id, user_id, body, likes_count |
+| `comment_like` | user_id, target_type (anime_comment \| episode_comment), target_id |
 
 ---
 
 ### Relationships
 
 ```text
-Anime ----< Episode
-Anime ----< Review
-Anime ----< Ranking
-Anime ----< Season
-Anime ----< Status
-Anime ----< Tag
-Anime ----< Platform
+Anime ----< Season ----< Episode ----< episode_rating
+                                  ----< episode_comment
 
+Anime ----< anime_comment
 Anime >----< Genre
-          anime_genre
+           anime_genre
+
+User ----< episode_rating
+User ----< anime_comment
+User ----< episode_comment
+User ----< comment_like
 ```
 
 ---
@@ -224,17 +248,26 @@ Base de Datos PostgreSQL
 
 ### Modelo de Base de Datos
 
-#### Tablas normales (9)
+#### Tablas de catálogo (1)
 
-1. anime
-2. genre
-3. episode
-4. review
-5. ranking
-6. season
-7. status
-8. tag
-9. platform
+1. genre
+
+#### Tablas principales (4)
+
+2. user
+3. anime
+4. season
+5. episode
+
+#### Tablas de puntuación (1)
+
+6. episode_rating
+
+#### Tablas de comentarios (3)
+
+7. anime_comment
+8. episode_comment
+9. comment_like
 
 #### Tabla pivote (1)
 
@@ -242,19 +275,34 @@ Base de Datos PostgreSQL
 
 ---
 
+### Campos destacados
+
+| Tabla | Columnas relevantes |
+|---|---|
+| `anime` | title, synopsis, status, year, cover_url, avg_score, ratings_count |
+| `season` | anime_id, number, title, year, avg_score, ratings_count |
+| `episode` | season_id, number, title, synopsis, aired_at, duration_sec, avg_score, ratings_count |
+| `episode_rating` | episode_id, user_id, score_story (30%), score_animation (25%), score_music (20%), score_characters (25%), final_score |
+| `anime_comment` | anime_id, user_id, body, likes_count |
+| `episode_comment` | episode_id, user_id, body, likes_count |
+| `comment_like` | user_id, target_type (anime_comment \| episode_comment), target_id |
+
+---
+
 ### Relaciones
 
 ```text
-Anime ----< Episode
-Anime ----< Review
-Anime ----< Ranking
-Anime ----< Season
-Anime ----< Status
-Anime ----< Tag
-Anime ----< Platform
+Anime ----< Season ----< Episode ----< episode_rating
+                                  ----< episode_comment
 
+Anime ----< anime_comment
 Anime >----< Genre
-          anime_genre
+           anime_genre
+
+User ----< episode_rating
+User ----< anime_comment
+User ----< episode_comment
+User ----< comment_like
 ```
 
 ---
