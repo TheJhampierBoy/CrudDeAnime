@@ -26,3 +26,10 @@ All notable changes to this project will be documented in this file.
 - Added `data-source.ts` for CLI usage
 - Added `migration:generate`, `migration:run`, `migration:revert` scripts
 - Generated and ran `InitialSchema` migration (`genre` table created)
+
+## [0.3.0] - 2026-06-05
+
+### Added
+
+- User module: entity, DTOs, mapper, service interface + impl, controller
+- Migration: AddUserTable
