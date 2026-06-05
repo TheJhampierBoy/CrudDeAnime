@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AnimeModule } from './modules/anime/anime.module';
 import { GenreModule } from './modules/genre/genre.module';
 import { UserModule } from './modules/user/user.module';
 
@@ -31,6 +32,7 @@ import { UserModule } from './modules/user/user.module';
     }),
     GenreModule,
     UserModule,
+    AnimeModule,
   ],
   controllers: [AppController],
   providers: [AppService],

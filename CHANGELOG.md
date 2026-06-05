@@ -33,3 +33,11 @@ All notable changes to this project will be documented in this file.
 
 - User module: entity, DTOs, mapper, service interface + impl, controller
 - Migration: AddUserTable
+
+## [0.4.0] - 2026-06-05
+
+### Added
+
+- Anime module: entity, DTOs, mapper, service interface + impl, controller
+- ManyToMany relation anime ↔ genre via `anime_genre` pivot table (no controller)
+- Migration: AddAnimeTable (creates `anime` + `anime_genre` tables)
