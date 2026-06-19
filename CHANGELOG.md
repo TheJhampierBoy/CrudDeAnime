@@ -49,3 +49,11 @@ All notable changes to this project will be documented in this file.
 - Season module: entity, DTOs, mapper, service interface + impl, controller
 - FK to anime with CASCADE delete, unique constraint (anime_id, number)
 - Migration: AddSeasonTable (pending — awaiting correct DB credentials in .env)
+
+## [0.6.0] - 2026-06-19
+
+### Added
+
+- Episode module: entity, DTOs, mapper, service interface + impl, controller
+- FK to season with CASCADE delete, unique constraint (season_id, number)
+- Migration: AddEpisodeTable
