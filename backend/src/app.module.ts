@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AnimeModule } from './modules/anime/anime.module';
+import { CommentsModule } from './modules/comments/comments.module';
 import { EpisodeModule } from './modules/episode/episode.module';
 import { GenreModule } from './modules/genre/genre.module';
 import { RatingModule } from './modules/rating/rating.module';
@@ -39,6 +40,7 @@ import { UserModule } from './modules/user/user.module';
     SeasonModule,
     EpisodeModule,
     RatingModule,
+    CommentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
