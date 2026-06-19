@@ -6,6 +6,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AnimeModule } from './modules/anime/anime.module';
 import { GenreModule } from './modules/genre/genre.module';
+import { SeasonModule } from './modules/season/season.module';
 import { UserModule } from './modules/user/user.module';
 
 @Module({
@@ -33,6 +34,7 @@ import { UserModule } from './modules/user/user.module';
     GenreModule,
     UserModule,
     AnimeModule,
+    SeasonModule,
   ],
   controllers: [AppController],
   providers: [AppService],

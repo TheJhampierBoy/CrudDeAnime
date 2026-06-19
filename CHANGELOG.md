@@ -41,3 +41,11 @@ All notable changes to this project will be documented in this file.
 - Anime module: entity, DTOs, mapper, service interface + impl, controller
 - ManyToMany relation anime ↔ genre via `anime_genre` pivot table (no controller)
 - Migration: AddAnimeTable (creates `anime` + `anime_genre` tables)
+
+## [0.5.0] - 2026-06-05
+
+### Added
+
+- Season module: entity, DTOs, mapper, service interface + impl, controller
+- FK to anime with CASCADE delete, unique constraint (anime_id, number)
+- Migration: AddSeasonTable (pending — awaiting correct DB credentials in .env)
