@@ -55,12 +55,62 @@ type Season = {
   created_at: string;
 };
 
+type Episode = {
+  id: number;
+  season_id: number;
+  number: number;
+  title: string | null;
+  synopsis: string | null;
+  aired_at: string | null;
+  duration_sec: number | null;
+  avg_score: number;
+  ratings_count: number;
+  created_at: string;
+};
+
+type Rating = {
+  id: number;
+  episode_id: number;
+  user_id: number;
+  score_story: number;
+  score_animation: number;
+  score_music: number;
+  score_characters: number;
+  final_score: number;
+  created_at: string;
+  updated_at: string;
+};
+
+type AnimeComment = {
+  id: number;
+  anime_id: number;
+  user_id: number;
+  body: string;
+  likes_count: number;
+  created_at: string;
+  updated_at: string;
+};
+
+type EpisodeComment = {
+  id: number;
+  episode_id: number;
+  user_id: number;
+  body: string;
+  likes_count: number;
+  created_at: string;
+  updated_at: string;
+};
+
 type State = {
   view: ViewName;
   animes: Anime[];
   genres: Genre[];
   seasons: Season[];
   allSeasons: Season[];
+  episodes: Episode[];
+  ratings: Rating[];
+  animeComments: AnimeComment[];
+  episodeComments: EpisodeComment[];
   search: string;
   status: 'all' | AnimeStatus;
   genreId: 'all' | number;
@@ -87,6 +137,10 @@ const state: State = {
   genres: [],
   seasons: [],
   allSeasons: [],
+  episodes: [],
+  ratings: [],
+  animeComments: [],
+  episodeComments: [],
   search: '',
   status: 'all',
   genreId: 'all',
