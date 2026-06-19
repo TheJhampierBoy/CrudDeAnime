@@ -7,6 +7,7 @@ import { AppService } from './app.service';
 import { AnimeModule } from './modules/anime/anime.module';
 import { EpisodeModule } from './modules/episode/episode.module';
 import { GenreModule } from './modules/genre/genre.module';
+import { RatingModule } from './modules/rating/rating.module';
 import { SeasonModule } from './modules/season/season.module';
 import { UserModule } from './modules/user/user.module';
 
@@ -37,6 +38,7 @@ import { UserModule } from './modules/user/user.module';
     AnimeModule,
     SeasonModule,
     EpisodeModule,
+    RatingModule,
   ],
   controllers: [AppController],
   providers: [AppService],

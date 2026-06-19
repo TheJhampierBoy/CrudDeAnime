@@ -57,3 +57,13 @@ All notable changes to this project will be documented in this file.
 - Episode module: entity, DTOs, mapper, service interface + impl, controller
 - FK to season with CASCADE delete, unique constraint (season_id, number)
 - Migration: AddEpisodeTable
+
+## [0.7.0] - 2026-06-19
+
+### Added
+
+- Rating module (episode_rating): entity, DTOs, mapper, service interface + impl, controller
+- Weighted final_score calculation (story 30%, animation 25%, music 20%, characters 25%) computed server-side
+- Aggregate recalculation: avg_score/ratings_count auto-updated on episode AND season after create/update/delete
+- FK to episode and user with CASCADE delete, unique constraint (episode_id, user_id)
+- Migration: AddEpisodeRatingTable
